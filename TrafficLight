@@ -1,0 +1,58 @@
+package trafficlight;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/**
+ *
+ * @author Guilherme Oliveira
+ */
+public class TrafficLight {
+
+    public static void main(String[] args) {
+        //Ask user for traffic light colour and output instruction
+        
+        BufferedReader myKB = new BufferedReader(new InputStreamReader(System.in));
+        
+        boolean validColour = false; //assume the colour is not valid
+        
+        
+            System.out.println("What colour is the traffic light?");
+            
+            try{
+                
+                String lightColour = myKB.readLine();
+                    
+                lightColour = lightColour.toUpperCase(); // this converts to uppercase
+                    
+                   switch (lightColour){
+                       
+                       case "RED":
+                               
+                               System.out.println("STOP!");
+                               validColour = true;
+                               break;
+                       case "ORANGE":
+                               
+                               System.out.println("Slow down");
+                               validColour = true;
+                               break;
+                               
+                       case "GREEN":
+                               System.out.println("Keep going");
+                               validColour = true;
+                               break;
+                               
+                       default:
+                       
+                               System.out.println("That is not a traffic light colour!");
+                               validColour = false;
+                   }
+             
+            }       
+            catch (Exception e) {
+                           
+              }
+         }
+    }
+    
